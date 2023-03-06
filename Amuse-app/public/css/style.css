@@ -1,0 +1,24 @@
+#base{
+    background-color: #EEE5E9;
+}
+#content{
+    border-radius: 20px;
+    background-color: #2B303A;
+    color: #EEE5E9;
+    font-family: Candara Light;
+}
+#title{
+    font-size: 100px;
+    text-align: center;
+    -webkit-text-fill-color:transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #92DCE5;
+
+}
+#nav{
+    background-color: transparent;
+}
+
+#aboutUs{
+    margin-left: 23px;
+}
