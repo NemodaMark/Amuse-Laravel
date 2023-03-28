@@ -1,24 +1,8 @@
 #base{
-    background-color: #EEE5E9;
-}
-#content{
-    border-radius: 20px;
-    background-color: #2B303A;
-    color: #EEE5E9;
-    font-family: Candara Light;
-}
-#title{
-    font-size: 100px;
-    text-align: center;
-    -webkit-text-fill-color:transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: #92DCE5;
-
-}
-#nav{
-    background-color: transparent;
+    background-color: #000000;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(150deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(30deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(150deg, #0c0c0c 12%, transparent 12.5%, transparent 87%, #0c0c0c 87.5%, #0c0c0c), linear-gradient(60deg, #0c0c0c77 25%, transparent 25.5%, transparent 75%, #0c0c0c77 75%, #0c0c0c77), linear-gradient(60deg, #0c0c0c77 25%, transparent 25.5%, transparent 75%, #0c0c0c77 75%, #0c0c0c77);
+    background-size: 40px 70px;
+    background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
 }
 
-#aboutUs{
-    margin-left: 23px;
-}
