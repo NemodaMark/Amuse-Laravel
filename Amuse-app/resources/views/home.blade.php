@@ -14,10 +14,12 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in! 
+                        Now you can donwload the Amuse launcher or if you want you can upload cash in to your wallet, or upload your own game! Good luck and have fun!') }}
                 </div>
-            </div>
-        </div>
+                <button type="button" class="btn btn-success">Donwload Now</button>
+            </div>            
+        </div> 
     </div>
 </div>
 @endsection
