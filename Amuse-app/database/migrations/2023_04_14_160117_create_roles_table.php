@@ -13,16 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('games', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->double('price');
-            $table->string('genreID');
-            $table->dateTime('added');
-            $table->integer('creator');
-            $table->text('description');
-            $table->string('link');
-
+            $table->string('role');
         });
     }
 
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('games');
+        Schema::dropIfExists('roles');
     }
 };
