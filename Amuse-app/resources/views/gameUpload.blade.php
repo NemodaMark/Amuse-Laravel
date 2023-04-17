@@ -27,7 +27,7 @@
                         <div class="form-outline">
                             <label class="form-label" for="price">Price</label>
                             <input id="price" value="€" type="text" id="price" name="price" class="form-control" />
-                            <small id="Title" class="form-text text-muted">Our take is 20% (example: 10€ game, you will get 8€)</small>
+                            <small id="Title" class="form-text text-muted">Our take is 10% (example: 10€ game, you will get 9€)</small>
                         </div>
                         </div>
 

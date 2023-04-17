@@ -37,10 +37,8 @@ class HomeController extends Controller
     {
         $userId = auth()->user()->id;
 
-        // Retrieve the user's balance from the database using the ID
         $wallet = DB::select("SELECT balance FROM users WHERE id = ?", [$userId]);
     
-        // Pass the balance to the 'balance' view
         return view('balance', ['userBalance' => $wallet[0]->balance]);
     }
 
@@ -54,16 +52,11 @@ class HomeController extends Controller
 
     $newBalance = $balance + $amount;
 
-    // Update the user's balance in the database
     DB::update("UPDATE users SET balance = ? WHERE id = ?", [$newBalance, $userId]);
 
-    // Set the success message for the toaster
-    $message = $amount . '€ has been added to your account';
+    //$message = $amount . '€ has been added to your account';
+   // Session::flash('success_message', $message);
 
-    // Store the message in the session
-    Session::flash('success_message', $message);
-
-    // Redirect back to the wallet page with the user's new balance
     return Redirect::route('wallet')->with(['userBalance' => $newBalance]);
     }
 

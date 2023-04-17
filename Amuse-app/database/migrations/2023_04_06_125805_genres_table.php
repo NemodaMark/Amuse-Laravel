@@ -13,19 +13,23 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('genres', function (Blueprint $table) {
-            $table->id();
-            $table->string('Genre');
-        });
+        if (!Schema::hasTable('genres')) {
+            Schema::create('genres', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->string('Genre');
+                $table->timestamps();
+            });
+        }
     }
-
+    
     /**
      * Reverse the migrations.
      *
      * @return void
      */
     public function down()
-    {
-        Schema::dropIfExists('genres');
-    }
+{
+    Schema::dropIfExists('genres');
+}
+
 };

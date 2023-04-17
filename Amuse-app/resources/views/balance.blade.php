@@ -20,7 +20,7 @@
                     <form method="POST" action="{{ route('pay') }}">
                         @csrf
                     <select class="form-select" aria-label="Default select example" name="amount">
-                    <option selected disable>Please select the amount of cash</option>
+                    <option value="0" selected disable>Please select the amount of cash</option>
                         <option value="1">1€</option>
                         <option value="5">5€</option>
                         <option value="10">10€</option>

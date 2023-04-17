@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->double('price');
-            $table->string('genreID');
+            $table->string('genreId');
             $table->dateTime('added');
-            $table->integer('creator');
+            $table->bigInteger('creator');
             $table->text('description');
             $table->string('link');
 
