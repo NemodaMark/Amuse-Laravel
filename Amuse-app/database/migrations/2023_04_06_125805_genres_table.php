@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class GenresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        if (!Schema::hasTable('genres')) {
-            Schema::create('genres', function (Blueprint $table) {
+            Schema::create('gameGenres', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('Genre');
-                $table->timestamps();
             });
-        }
     }
     
     /**
@@ -28,8 +25,7 @@ return new class extends Migration
      * @return void
      */
     public function down()
-{
-    Schema::dropIfExists('genres');
-}
-
+    {
+        Schema::dropIfExists('gameGenres');
+    }
 };

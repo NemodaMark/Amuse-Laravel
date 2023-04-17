@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class orders extends Migration
 {
     /**
      * Run the migrations.
@@ -12,19 +12,17 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('orders', function (Blueprint $table) {
-        $table->bigIncrements('id');
-        $table->unsignedBigInteger('userId');
-        $table->unsignedBigInteger('gameId');
-        $table->timestamp('timestamp')->useCurrent();
-        $table->timestamps();
+    {
+        Schema::create('games_purchase', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('userId');
+            $table->unsignedBigInteger('gameId');
+            $table->timestamps();
 
-        $table->foreign('userId')->references('id')->on('users');
-        $table->foreign('gameId')->references('id')->on('games');
-    });
-}
-
+            $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('gameId')->references('id')->on('games');
+        });
+    }
 
     /**
      * Reverse the migrations.
@@ -33,12 +31,11 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
+        Schema::table('games_purchase', function (Blueprint $table) {
             $table->dropForeign(['gameId']);
+            $table->dropForeign(['userId']);
         });
-    
-        Schema::dropIfExists('games');
+
+        Schema::dropIfExists('games_purchase');
     }
-    
-    
 };
