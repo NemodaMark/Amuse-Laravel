@@ -13,29 +13,26 @@ class orders extends Migration
      */
     public function up()
     {
-        Schema::create('games_purchase', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('userId');
-            $table->unsignedBigInteger('gameId');
-            $table->timestamps();
-
-            $table->foreign('userId')->references('id')->on('users');
-            $table->foreign('gameId')->references('id')->on('games');
-        });
+        if (!Schema::hasTable('orders')) {
+            Schema::create('orders', function (Blueprint $table) {
+                $table->bigIncrements('id');
+                $table->unsignedBigInteger('userId');
+                $table->unsignedBigInteger('gameId');
+                $table->timestamps();
+    
+                $table->foreign('userId')->references('id')->on('users');
+                $table->foreign('gameId')->references('id')->on('games');
+            });
+        }
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
-        Schema::table('games_purchase', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             $table->dropForeign(['gameId']);
             $table->dropForeign(['userId']);
         });
-
-        Schema::dropIfExists('games_purchase');
+    
+        Schema::dropIfExists('orders');
     }
-};
+}    

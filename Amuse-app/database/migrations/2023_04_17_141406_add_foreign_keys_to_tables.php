@@ -43,14 +43,22 @@ class AddForeignKeysToTables extends Migration
     public function down()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->dropForeign(['gameId']);
-            $table->dropForeign(['userId']);
-            $table->dropColumn(['gameId', 'userId']);
+            if (Schema::hasColumn('orders', 'gameId')) {
+                $table->dropForeign(['gameId']);
+                $table->dropColumn('gameId');
+            }
+    
+            if (Schema::hasColumn('orders', 'userId')) {
+                $table->dropForeign(['userId']);
+                $table->dropColumn('userId');
+            }
         });
-
+    
         Schema::table('games', function (Blueprint $table) {
-            $table->dropForeign(['genreID']);
-            $table->dropColumn('genreID');
+            if (Schema::hasColumn('games', 'genreID')) {
+                $table->dropForeign(['genreID']);
+                $table->dropColumn('genreID');
+            }
         });
     }
-};
+}

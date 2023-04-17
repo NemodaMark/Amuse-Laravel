@@ -14,7 +14,7 @@ class UploadGamesTable extends Migration
     public function up()
     {
         Schema::create('uploadedGames', function (Blueprint $table) {
-            $table->id();
+            $table->id()->primary();
             $table->string('title');
             $table->double('price');
             $table->string('genreId');

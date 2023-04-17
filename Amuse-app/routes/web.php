@@ -23,6 +23,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/wallet',[App\Http\Controllers\HomeController::class, 'balance'])->name('wallet');
 Route::post('/pay', [App\Http\Controllers\HomeController::class, 'pay'])->name('pay');
 Route::get('/game',[App\Http\Controllers\HomeController::class, 'game'])->name('game');
-Route::post('/gameupload', [App\Http\Controllers\Namespace\UploadController::class, 'gameUpload'])->name('gameupload');
+Route::post('/gameupload', [App\Http\Controllers\Namespace\GameUploadController::class, 'gameUpload'])->name('gameupload');
+
 
 
